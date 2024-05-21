@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Spazio Libero SD Card</title>
+<script>
+// Assumiamo che l'oggetto wiiSDCard sia già definito e disponibile
+var sdCard = new wiiSDCard();
+
+// Funzione per aggiornare lo spazio libero della SD Card
+function updateFreeSpace() {
+  var freeKBytes = sdCard.getFreeKBytes();
+  document.getElementById('free-space').textContent = 'Spazio libero sulla SD Card: ' + freeKBytes + ' KB';
+}
+
+// Aggiorna lo spazio libero al caricamento della pagina
+window.onload = updateFreeSpace;
+</script>
+</head>
+<body>
+
+<p id="free-space"></p>
+
+</body>
+</html>
